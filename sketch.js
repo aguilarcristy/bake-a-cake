@@ -16,12 +16,10 @@ function preload() {
     "cake7.png"
   );
 
-  img = loadImage("Celina.jpg", "Froggy.jpg");
 } // Cake Animation
 
 function setup() {
   createCanvas(900, 900);
-  image(img, 0, 0);
 }
 
 function draw() {
@@ -39,15 +37,22 @@ function draw() {
     case "lvl3":
       ovenSettings();
       break;
-    case "gameover":
+      case "lvl4":
+      houseBurned();
+      break;
+    case "lvl5":
+      gameWin();
+      break;
+    case "gameOver":
       gameOver();
       break;
   }
 }
 
 function keyReleased() {
+
   // Click S to Start Game
-  if (gameState === "title" || gameState === "titleScreen") {
+  if (gameState === "title") {
     if (key === "s" || key === "S") {
       gameState = "lvl1";
     }
@@ -59,14 +64,29 @@ function keyReleased() {
     }
   }
 
-  // Pick Wrong Ingredients
-  if (gameState === "lvl2" || gameState === "readyToBake") {
-    if (key === "a" || key === "A") {
-      gameState = "lvl3";
+  // Pick Ingredients a/A = Nxt Lvl, b/B = gameOver
+
+  if (gameState === "lvl2") {
+    if (key === 'a' || key === 'A') {
+      gameState = 'lvl3';
     }
-  } else if (gameState === "readyToBake") {
-    if (key === "b" || key === "B") {
-      gameState = "gameover";
+  }
+   if (gameState === "lvl2") {
+    if (key === 'b' || key === 'B') {
+      gameState = 'gameOver';
+    }
+  }
+
+  // PreHeating Oven Question q/Q = gameWin, z/Z = gameOver
+  if (gameState === "lvl3") {
+    if (key === "q" || key === "Q") {
+      gameState = "lvl5";
+    }
+
+    // Click F or C to select Character
+  } if (gameState === "lvl3") {
+    if (key === "z" || key === "Z") {
+      gameState = "gameOver";
     }
   }
 }
@@ -115,6 +135,7 @@ function readyToBake() {
 
   rect(200, 400, 70, 70);
   rect(600, 400, 70, 70);
+
 }
 
 function ovenSettings() {
@@ -125,9 +146,27 @@ function ovenSettings() {
   text("How long will you preheat your oven for?", width * 0.5, height * 0.1);
   textSize(25);
   textAlign(CENTER);
-  text("Click A or B", 500, 500);
+  text("q= 25 minutes, z = 35 minutes", 500, 500);
 }
 
+function houseBurned () {
+
+  background(255, 247, 189);
+  fill(255, 128, 128);
+  textSize(50);
+  textAlign(CENTER);
+  text("Dang! You preheated the oven for too long, so the house burned down! You died! Mwahahaha!", width * 0.5, height * 0.1);}
+
+function gameWin () {
+   background(255, 247, 189);
+  noStroke();
+  fill(255, 128, 128);
+  textSize(75);
+  textAlign(CENTER);
+  text("YOU PASSED", width * 0.5, height * 0.33);
+  textSize(12);
+  text("Don't think you earned a spot in the Great British Baking Show just cause you won the game.", width * 0.5, height * 0.66);
+}
 function gameOver() {
   background(255, 247, 189);
   noStroke();
