@@ -128,7 +128,6 @@ function ovenSettings() {
   text("Click A or B", 500, 500);
 }
 
- 
 function gameOver() {
   background(255, 247, 189);
   noStroke();
