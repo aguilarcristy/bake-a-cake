@@ -3,6 +3,7 @@ var cake;
 let gameState = "title";
 let canvas;
 let bgR = (255, 247, 189);
+var myFont;
 
 function preload() {
   cake = loadAnimation(
@@ -16,14 +17,17 @@ function preload() {
     "cake7.png"
   );
 
+  myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
+
 } // Cake Animation
 
 function setup() {
-  createCanvas(900, 900);
+  createCanvas(950, 800);
+  textFont(myFont);
 }
 
 function draw() {
-  background(255, 247, 189);
+  background(255, 250, 232);
   switch (gameState) {
     case "title":
       titleScreen();
@@ -86,28 +90,31 @@ function keyReleased() {
     // Click F or C to select Character
   } if (gameState === "lvl3") {
     if (key === "z" || key === "Z") {
-      gameState = "gameOver";
+      gameState = "lvl4";
     }
   }
 }
 
 function titleScreen() {
-  background(255, 247, 189);
+  background(255, 250, 232);
 
   stroke(255);
-  fill(255, 128, 128);
+  fill(255, 219, 206);
   textSize(75);
   textAlign(CENTER);
   text("Bake-A-Cake", width * 0.5, height * 0.1);
   textSize(25);
+  fill(255);
+  rect(800, 800, 45, 25);
+  fill(255, 219, 206);
   text('Press "S" To Start Game', width * 0.5, height * 0.85);
-  animation(cake, 450, 450);
+  animation(cake, 460, 400);
 }
 
 function gameStage1() {
-  background(255, 247, 189);
+  background(255, 250, 232);
   noStroke();
-  fill(255, 128, 128);
+  fill(255, 219, 206);
   textSize(30);
   textAlign(CENTER);
   text(
@@ -118,8 +125,8 @@ function gameStage1() {
 }
 
 function readyToBake() {
-  background(255, 247, 189);
-  fill(255, 128, 128);
+  background(255, 250, 232);
+  fill(255, 219, 206);
   textSize(50);
   textAlign(CENTER);
   text("Ready to Bake: Pick your ingredients!", width * 0.5, height * 0.1);
@@ -128,19 +135,19 @@ function readyToBake() {
   textAlign(CENTER);
   text("Click A or B", width * 0.5, height * 0.3);
   noStroke();
-  text("A", 220, 390);
-  text("B", 620, 390);
+  text("A: Flour, eggs, sugar salt, butter", 180, 390);
+  text("B: Flour, water, cyanide, sugar, butter ", 640, 390);
 
   // These rectangles will later be replaced by artwork/images
 
-  rect(200, 400, 70, 70);
+  rect(160, 400, 70, 70);
   rect(600, 400, 70, 70);
 
 }
 
 function ovenSettings() {
-  background(255, 247, 189);
-  fill(255, 128, 128);
+  background(255, 250, 232);
+  fill(255, 219, 206);
   textSize(50);
   textAlign(CENTER);
   text("How long will you preheat your oven for?", width * 0.5, height * 0.1);
@@ -151,16 +158,16 @@ function ovenSettings() {
 
 function houseBurned () {
 
-  background(255, 247, 189);
-  fill(255, 128, 128);
-  textSize(50);
+  background(255, 250, 232);
+  fill(255, 219, 206);
+  textSize(25);
   textAlign(CENTER);
-  text("Dang! You preheated the oven for too long, so the house burned down! You died! Mwahahaha!", width * 0.5, height * 0.1);}
+  text("Dang! You preheated the oven for too long, so the house burned down! You died!", width * 0.5, height * 0.1);}
 
 function gameWin () {
-   background(255, 247, 189);
+   background(255, 250, 232);
   noStroke();
-  fill(255, 128, 128);
+  fill(255, 219, 206);
   textSize(75);
   textAlign(CENTER);
   text("YOU PASSED", width * 0.5, height * 0.33);
@@ -168,9 +175,9 @@ function gameWin () {
   text("Don't think you earned a spot in the Great British Baking Show just cause you won the game.", width * 0.5, height * 0.66);
 }
 function gameOver() {
-  background(255, 247, 189);
+  background(255, 250, 232);
   noStroke();
-  fill(255, 128, 128);
+  fill(255, 219, 206);
   textSize(75);
   textAlign(CENTER);
   text("GAME OVER", width * 0.5, height * 0.33);

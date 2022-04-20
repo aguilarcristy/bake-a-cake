@@ -3,9 +3,12 @@ html, body {
   padding: 0;
   background-color:rgb(255, 247, 189);
 }
+
+
 canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px
+
 }
