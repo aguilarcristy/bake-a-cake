@@ -158,7 +158,7 @@ function ovenSettings() {
   fill(255, 219, 206);
   textSize(45);
   textAlign(CENTER);
-  text("How long will you preheat your oven for?", width * 0.5, height * 0.085);
+  text("How long will you preheat your oven for?", 480, 325);
   textSize(35);
   textAlign(CENTER);
   text("Q= 25 minutes, Z = 35 minutes", 500, 500);
@@ -187,7 +187,7 @@ function poisonedFriend() {
   textSize(45);
   textAlign(CENTER, TOP);
   text("Your friend is dead, lol.", 450, 180)
-  textSize(30);
+  textSize(25);
 text("Your ingredients were poisonous", 450, 300);
 text("Have fun going to trial for murder!", 450, 350)
   }
