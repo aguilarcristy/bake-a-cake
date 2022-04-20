@@ -47,6 +47,9 @@ function draw() {
     case "lvl5":
       gameWin();
       break;
+    case "lvl6":
+    poisonedFriend();
+      break;
     case "gameOver":
       gameOver();
       break;
@@ -77,7 +80,7 @@ function keyReleased() {
   }
    if (gameState === "lvl2") {
     if (key === 'b' || key === 'B') {
-      gameState = 'gameOver';
+      gameState = 'lvl6';
     }
   }
 
@@ -103,7 +106,7 @@ function titleScreen() {
   textSize(75);
   textAlign(CENTER);
   text("Bake-A-Cake", width * 0.5, height * 0.1);
-  textSize(25);
+  textSize(35);
   fill(255);
   rect(800, 800, 45, 25);
   fill(255, 219, 206);
@@ -115,28 +118,33 @@ function gameStage1() {
   background(255, 250, 232);
   noStroke();
   fill(255, 219, 206);
-  textSize(30);
+  textSize(45);
   textAlign(CENTER);
   text(
-    "Pick a friend! Click f for Franny or c for Celina",
+    "Pick a friend!",
     width * 0.5,
-    height * 0.1
-  );
+    height * 0.085);
+
+    fill(255, 219, 206);
+        textSize(35);
+        textAlign(CENTER);
+        text("Click F for Franny or C for Celina", 480, 325);
 }
 
 function readyToBake() {
   background(255, 250, 232);
   fill(255, 219, 206);
-  textSize(50);
+  textSize(45);
   textAlign(CENTER);
-  text("Ready to Bake: Pick your ingredients!", width * 0.5, height * 0.1);
+  text("Ready to Bake: Pick your ingredients!", width * 0.5, height * 0.085);
 
-  textSize(25);
+  textSize(35);
   textAlign(CENTER);
   text("Click A or B", width * 0.5, height * 0.3);
   noStroke();
-  text("A: Flour, eggs, sugar salt, butter", 180, 390);
-  text("B: Flour, water, cyanide, sugar, butter ", 640, 390);
+  textSize(25);
+  text("A: Flour, eggs, sugar salt, butter", 220, 390);
+  text("B: Flour, water, cyanide, sugar, butter ", 680, 390);
 
   // These rectangles will later be replaced by artwork/images
 
@@ -148,31 +156,56 @@ function readyToBake() {
 function ovenSettings() {
   background(255, 250, 232);
   fill(255, 219, 206);
-  textSize(50);
+  textSize(45);
   textAlign(CENTER);
-  text("How long will you preheat your oven for?", width * 0.5, height * 0.1);
-  textSize(25);
+  text("How long will you preheat your oven for?", width * 0.5, height * 0.085);
+  textSize(35);
   textAlign(CENTER);
-  text("q= 25 minutes, z = 35 minutes", 500, 500);
+  text("Q= 25 minutes, Z = 35 minutes", 500, 500);
 }
 
 function houseBurned () {
 
   background(255, 250, 232);
   fill(255, 219, 206);
-  textSize(25);
-  textAlign(CENTER);
-  text("Dang! You preheated the oven for too long, so the house burned down! You died!", width * 0.5, height * 0.1);}
+  textSize(70);
+  textAlign(CENTER, TOP);
+  text("GAME OVER", 450, 80);
+  textSize(45);
+  textAlign(CENTER, TOP);
+  text("Dang!", 450, 180)
+  textSize(30);
+text("You preheated the oven for too long.", 450, 300);
+text("The house burned down and you died, sucker!", 450, 350)
+  }
+function poisonedFriend() {
+  background(255, 250, 232);
+  fill(255, 219, 206);
+  textSize(80);
+  textAlign(CENTER, TOP);
+  text("GAME OVER", 450, 80);
+  textSize(45);
+  textAlign(CENTER, TOP);
+  text("Your friend is dead, lol.", 450, 180)
+  textSize(30);
+text("Your ingredients were poisonous", 450, 300);
+text("Have fun going to trial for murder!", 450, 350)
+  }
+
 
 function gameWin () {
    background(255, 250, 232);
   noStroke();
   fill(255, 219, 206);
-  textSize(75);
-  textAlign(CENTER);
-  text("YOU PASSED", width * 0.5, height * 0.33);
-  textSize(12);
-  text("Don't think you earned a spot in the Great British Baking Show just cause you won the game.", width * 0.5, height * 0.66);
+  textSize(80);
+  textAlign(CENTER, TOP);
+  text("YOU PASSED", 450, 80);
+  textSize(35);
+text("Don't think you earned a spot in the Great British ", 450, 300);
+text("Baking Show just cause you won the game.", 450, 350);
+textSize(25);
+text("Congrats, I guess", 450, 400);
+
 }
 function gameOver() {
   background(255, 250, 232);
