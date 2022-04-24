@@ -18,13 +18,11 @@ function preload() {
   );
 
   myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
-
-
-cursorImg =loadImage('Images/HeartCursor.jpg');
+cursorImg =loadImage('Images/HeartCursor.png');
 } // Cake Animation
 
 function setup() {
-  createCanvas(950, 800);
+  createCanvas(950, 650);
   textFont(myFont);
   noCursor();
 
@@ -106,15 +104,15 @@ function titleScreen() {
   background(255, 250, 232);
 
   stroke(255);
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(75);
   textAlign(CENTER);
   text("Bake-A-Cake", width * 0.5, height * 0.1);
   textSize(35);
   fill(255);
   rect(800, 800, 45, 25);
-  fill(255, 219, 206);
-  text('Press "S" To Start Game', width * 0.5, height * 0.85);
+  fill(255, 157, 157);
+  text('Press "S" To Start Game', 450, 150);
   animation(cake, 460, 400);
   image(cursorImg, mouseX, mouseY);
 }
@@ -122,7 +120,7 @@ function titleScreen() {
 function gameStage1() {
   background(255, 250, 232);
   noStroke();
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(45);
   textAlign(CENTER);
   text(
@@ -130,16 +128,16 @@ function gameStage1() {
     width * 0.5,
     height * 0.085);
 
-    fill(255, 219, 206);
-        textSize(35);
+    fill(255, 157, 157);
+        textSize(30);
         textAlign(CENTER);
-        text("Click F for Franny or C for Celina", 480, 325);
+        text("Click F for Franny or C for Celina", 480, 150);
         image(cursorImg, mouseX, mouseY);
 }
 
 function readyToBake() {
   background(255, 250, 232);
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(45);
   textAlign(CENTER);
   text("Ready to Bake: Pick your ingredients!", width * 0.5, height * 0.085);
@@ -162,7 +160,7 @@ function readyToBake() {
 
 function ovenSettings() {
   background(255, 250, 232);
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(45);
   textAlign(CENTER);
   text("How long will you preheat your oven for?", 480, 325);
@@ -176,7 +174,7 @@ function ovenSettings() {
 function houseBurned () {
 
   background(255, 250, 232);
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(70);
   textAlign(CENTER, TOP);
   text("GAME OVER", 450, 80);
@@ -192,7 +190,7 @@ text("The house burned down and you died, sucker!", 450, 350)
 
 function poisonedFriend() {
   background(255, 250, 232);
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(80);
   textAlign(CENTER, TOP);
   text("GAME OVER", 450, 80);
@@ -209,7 +207,7 @@ text("Have fun going to trial for murder!", 450, 350)
 function gameWin () {
    background(255, 250, 232);
   noStroke();
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(80);
   textAlign(CENTER, TOP);
   text("YOU PASSED", 500, 80);
@@ -225,7 +223,7 @@ text("Congrats, I guess", 500, 400);
 function gameOver() {
   background(255, 250, 232);
   noStroke();
-  fill(255, 219, 206);
+  fill(255, 157, 157);
   textSize(75);
   textAlign(CENTER);
   text("GAME OVER", width * 0.5, height * 0.33);
