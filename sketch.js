@@ -22,7 +22,7 @@ cursorImg =loadImage('Images/HeartCursor.png');
 } // Cake Animation
 
 function setup() {
-  createCanvas(950, 650);
+  createCanvas(950, 700);
   textFont(myFont);
   noCursor();
 
@@ -51,6 +51,15 @@ function draw() {
       break;
     case "lvl6":
     poisonedFriend();
+      break;
+    case "lvl7":
+     gameOver ();
+     break;
+     case "lvl8":
+     burntTongue();
+      break;
+     case "lvl9":
+     giftCake();
       break;
     case "gameOver":
       gameOver();
@@ -89,8 +98,9 @@ function keyReleased() {
   // PreHeating Oven Question q/Q = gameWin, z/Z = gameOver
   if (gameState === "lvl3") {
     if (key === "q" || key === "Q") {
-      gameState = "lvl5";
+      gameState = "lvl9";
     }
+
 
     // Click F or C to select Character
   } if (gameState === "lvl3") {
@@ -98,11 +108,22 @@ function keyReleased() {
       gameState = "lvl4";
     }
   }
+
+if (gameState === "lvl9"){
+  if (key === "x" || key === "X") {
+    gameState ="lvl8"
+  }
+}
+if (gameState === "lvl9") {
+  if (key === "c" || key === "C") {
+    gameState ="lvl5";
+  }
+}
+
 }
 
 function titleScreen() {
   background(255, 250, 232);
-
   stroke(255);
   fill(255, 157, 157);
   textSize(75);
@@ -188,6 +209,34 @@ text("The house burned down and you died, sucker!", 450, 350)
   image(cursorImg, mouseX, mouseY);
   }
 
+function giftCake () {
+  background(255, 250, 232);
+  fill(255, 157, 157);
+  textSize(45);
+  textAlign(CENTER);
+  text("Cake is ready! Let it cool or give it now?", 480, 325);
+  textSize(35);
+  textAlign(CENTER);
+  text("C= Let it cool! X = Give the cake now!", 500, 500);
+
+    image(cursorImg, mouseX, mouseY);
+}
+
+function burntTongue () {
+  background(255, 250, 232);
+  fill(255, 157, 157);
+  textSize(45);
+  text("GAME OVER", 350, 100);
+  textAlign(CENTER);
+  textSize(35);
+  text("The cake was too hot", 480, 300);
+  text("and your friend burned their tongue.", 480, 340);
+  text("They're now plotting your murder, cute!", 480, 380);
+  textSize(15);
+  text("#scorpioenergy", 480, 420);
+  textAlign(CENTER);
+}
+
 function poisonedFriend() {
   background(255, 250, 232);
   fill(255, 157, 157);
@@ -205,7 +254,7 @@ text("Have fun going to trial for murder!", 450, 350)
   }
 
 function gameWin () {
-   background(255, 250, 232);
+  background(255, 250, 232);
   noStroke();
   fill(255, 157, 157);
   textSize(80);
@@ -226,7 +275,7 @@ function gameOver() {
   fill(255, 157, 157);
   textSize(75);
   textAlign(CENTER);
-  text("GAME OVER", width * 0.5, height * 0.33);
+  text("GAME OVER", 450, 200);
   textSize(25);
   text("You suck! Lol", width * 0.5, height * 0.66);
 
