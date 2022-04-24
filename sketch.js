@@ -19,11 +19,15 @@ function preload() {
 
   myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
 
+
+cursorImg =loadImage('Images/HeartCursor.jpg');
 } // Cake Animation
 
 function setup() {
   createCanvas(950, 800);
   textFont(myFont);
+  noCursor();
+
 }
 
 function draw() {
@@ -112,6 +116,7 @@ function titleScreen() {
   fill(255, 219, 206);
   text('Press "S" To Start Game', width * 0.5, height * 0.85);
   animation(cake, 460, 400);
+  image(cursorImg, mouseX, mouseY);
 }
 
 function gameStage1() {
@@ -129,6 +134,7 @@ function gameStage1() {
         textSize(35);
         textAlign(CENTER);
         text("Click F for Franny or C for Celina", 480, 325);
+        image(cursorImg, mouseX, mouseY);
 }
 
 function readyToBake() {
@@ -150,6 +156,7 @@ function readyToBake() {
 
   rect(160, 400, 70, 70);
   rect(600, 400, 70, 70);
+  image(cursorImg, mouseX, mouseY);
 
 }
 
@@ -162,6 +169,8 @@ function ovenSettings() {
   textSize(35);
   textAlign(CENTER);
   text("Q= 25 minutes, Z = 35 minutes", 500, 500);
+
+    image(cursorImg, mouseX, mouseY);
 }
 
 function houseBurned () {
@@ -177,6 +186,8 @@ function houseBurned () {
   textSize(30);
 text("You preheated the oven for too long.", 450, 300);
 text("The house burned down and you died, sucker!", 450, 350)
+
+  image(cursorImg, mouseX, mouseY);
   }
 
 function poisonedFriend() {
@@ -191,6 +202,8 @@ function poisonedFriend() {
   textSize(25);
 text("Your ingredients were poisonous", 450, 300);
 text("Have fun going to trial for murder!", 450, 350)
+
+  image(cursorImg, mouseX, mouseY);
   }
 
 function gameWin () {
@@ -206,6 +219,7 @@ text("Baking Show just cause you won the game.", 500, 350);
 textSize(25);
 text("Congrats, I guess", 500, 400);
 
+  image(cursorImg, mouseX, mouseY);
 }
 
 function gameOver() {
@@ -217,4 +231,6 @@ function gameOver() {
   text("GAME OVER", width * 0.5, height * 0.33);
   textSize(25);
   text("You suck! Lol", width * 0.5, height * 0.66);
+
+    image(cursorImg, mouseX, mouseY);
 }
