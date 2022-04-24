@@ -178,6 +178,7 @@ function houseBurned () {
 text("You preheated the oven for too long.", 450, 300);
 text("The house burned down and you died, sucker!", 450, 350)
   }
+
 function poisonedFriend() {
   background(255, 250, 232);
   fill(255, 219, 206);
@@ -192,21 +193,21 @@ text("Your ingredients were poisonous", 450, 300);
 text("Have fun going to trial for murder!", 450, 350)
   }
 
-
 function gameWin () {
    background(255, 250, 232);
   noStroke();
   fill(255, 219, 206);
   textSize(80);
   textAlign(CENTER, TOP);
-  text("YOU PASSED", 450, 80);
+  text("YOU PASSED", 500, 80);
   textSize(35);
-text("Don't think you earned a spot in the Great British ", 450, 300);
-text("Baking Show just cause you won the game.", 450, 350);
+text("Don't think you earned a spot in the Great British ", 500, 300);
+text("Baking Show just cause you won the game.", 500, 350);
 textSize(25);
-text("Congrats, I guess", 450, 400);
+text("Congrats, I guess", 500, 400);
 
 }
+
 function gameOver() {
   background(255, 250, 232);
   noStroke();
