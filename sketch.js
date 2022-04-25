@@ -5,6 +5,7 @@ let canvas;
 let bgR = (255, 247, 189);
 var myFont;
 
+
 function preload() {
   cake = loadAnimation(
     "cake1.png",
@@ -16,9 +17,16 @@ function preload() {
     "cake7.png",
     "cake7.png"
   );
-
+  fire = loadImage ('Images/HouseFire.png');
+  frannyfriend = loadImage ('Images/Franny-Frog-Chef.png');
+  celina = loadImage('Images/Celina-.png');
+  celinadead = loadImage('Images/CelinaDead.png');
+  frannydead = loadImage('Images/FrannyDead.png');
+  ingredients =loadImage('Images/ingredients.png')
+{
   myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
 cursorImg =loadImage('Images/HeartCursor.png');
+}
 } // Cake Animation
 
 function setup() {
@@ -154,6 +162,9 @@ function gameStage1() {
         textAlign(CENTER);
         text("Click F for Franny or C for Celina", 480, 150);
         image(cursorImg, mouseX, mouseY);
+
+        image(celina, 500, 200);
+        image(frannyfriend, 200, 215);
 }
 
 function readyToBake() {
@@ -161,22 +172,20 @@ function readyToBake() {
   fill(255, 157, 157);
   textSize(45);
   textAlign(CENTER);
-  text("Ready to Bake: Pick your ingredients!", width * 0.5, height * 0.085);
+  text("Ready to Bake: Pick your ingredients!", 450, 45);
 
   textSize(35);
   textAlign(CENTER);
-  text("Click A or B", width * 0.5, height * 0.3);
+  text("Click A or B", 450, 100);
   noStroke();
   textSize(25);
-  text("A: Flour, eggs, sugar salt, butter", 220, 390);
-  text("B: Flour, water, cyanide, sugar, butter ", 680, 390);
+  text("A: Flour, eggs, sugar salt, butter", 220, 200);
+  text("B: Flour, water, cyanide, sugar, butter ", 680, 200);
 
   // These rectangles will later be replaced by artwork/images
 
-  rect(160, 400, 70, 70);
-  rect(600, 400, 70, 70);
   image(cursorImg, mouseX, mouseY);
-
+image(ingredients, 200, 240);
 }
 
 function ovenSettings() {
@@ -204,10 +213,11 @@ function houseBurned () {
   text("Dang!", 450, 180)
   textSize(30);
 text("You preheated the oven for too long.", 450, 300);
-text("The house burned down and you died, sucker!", 450, 350)
+text("The house burned down and you died, sucker!", 450, 350);
 
   image(cursorImg, mouseX, mouseY);
-  }
+  image(fire, 300, 350);
+}
 
 function giftCake () {
   background(255, 250, 232);
@@ -242,13 +252,17 @@ function poisonedFriend() {
   fill(255, 157, 157);
   textSize(80);
   textAlign(CENTER, TOP);
-  text("GAME OVER", 450, 80);
+  text("GAME OVER", 450, 5);
   textSize(45);
   textAlign(CENTER, TOP);
-  text("Your friend is dead, lol.", 450, 180)
+  text("Your friend is dead, lol.", 450, 100)
   textSize(25);
-text("Your ingredients were poisonous", 450, 300);
-text("Have fun going to trial for murder!", 450, 350)
+text("Your ingredients were poisonous", 450, 180);
+text("Have fun going to trial for murder!", 450, 220)
+
+
+image(celinadead, 500, 300);
+image(frannydead, 200, 315);
 
   image(cursorImg, mouseX, mouseY);
   }
