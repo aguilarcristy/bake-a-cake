@@ -207,16 +207,19 @@ function houseBurned () {
   fill(255, 157, 157);
   textSize(70);
   textAlign(CENTER, TOP);
-  text("GAME OVER", 450, 80);
+  text("GAME OVER", 450, 5);
   textSize(45);
   textAlign(CENTER, TOP);
-  text("Dang!", 450, 180)
+  text("Dang!", 450, 100)
   textSize(30);
-text("You preheated the oven for too long.", 450, 300);
-text("The house burned down and you died, sucker!", 450, 350);
+text("You preheated the oven for too long.", 450, 180);
+text("The house burned down and you died, sucker!", 450, 220);
 
   image(cursorImg, mouseX, mouseY);
   image(fire, 300, 350);
+textSize(12);
+  text("Refresh to play again!", 450, 260);
+
 }
 
 function giftCake () {
@@ -236,15 +239,20 @@ function burntTongue () {
   background(255, 250, 232);
   fill(255, 157, 157);
   textSize(45);
-  text("GAME OVER", 350, 100);
+  text("GAME OVER", 350, 45);
   textAlign(CENTER);
   textSize(35);
-  text("The cake was too hot", 480, 300);
-  text("and your friend burned their tongue.", 480, 340);
-  text("They're now plotting your murder, cute!", 480, 380);
-  textSize(15);
-  text("#scorpioenergy", 480, 420);
+  text("The cake was too hot", 480, 140);
+  text("and your friend burnt their tongue.", 480, 180);
+  text("They're now plotting your murder, cute!", 480, 220);
   textAlign(CENTER);
+  textSize(20);
+  text("Refresh to play again!", 450, 270);
+
+textAlign(CENTER);
+  textSize(15);
+  text("#scorpioenergy", 480, 290);
+
 }
 
 function poisonedFriend() {
@@ -259,6 +267,9 @@ function poisonedFriend() {
   textSize(25);
 text("Your ingredients were poisonous", 450, 180);
 text("Have fun going to trial for murder!", 450, 220)
+
+textSize(12);
+text("Refresh to play again!", 450, 260);
 
 
 image(celinadead, 500, 300);
@@ -292,6 +303,10 @@ function gameOver() {
   text("GAME OVER", 450, 200);
   textSize(25);
   text("You suck! Lol", width * 0.5, height * 0.66);
+  textSize(12);
+    text("Refresh to play again!", 350, 380);
+
+
 
     image(cursorImg, mouseX, mouseY);
 }
