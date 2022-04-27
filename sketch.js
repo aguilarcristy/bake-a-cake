@@ -1,5 +1,7 @@
 let img;
 var cake;
+var houseFire;
+
 let gameState = "title";
 let canvas;
 let bgR = (255, 247, 189);
@@ -17,17 +19,34 @@ function preload() {
     "cake7.png",
     "cake7.png"
   );
-  fire = loadImage ('Images/HouseFire.png');
+
+  houseFire =loadAnimation(
+     "Frame1.png",
+     "Frame1.png",
+     "Frame2.png",
+     "Frame2.png",
+     "Frame3.png",
+     "Frame3.png",
+     "Frame4.png",
+     "Frame4.png",
+     "Frame5.png",
+     "Frame5.png"
+   );
+
   frannyfriend = loadImage ('Images/Franny-Frog-Chef.png');
   celina = loadImage('Images/Celina-.png');
   celinadead = loadImage('Images/CelinaDead.png');
   frannydead = loadImage('Images/FrannyDead.png');
   ingredients =loadImage('Images/ingredients.png')
-{
-  myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
-cursorImg =loadImage('Images/HeartCursor.png');
-}
-} // Cake Animation
+
+  {
+    myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
+  cursorImg =loadImage('Images/HeartCursor.png');
+  }
+  }
+
+
+ // Cake Animation
 
 function setup() {
   createCanvas(950, 700);
@@ -176,7 +195,7 @@ function readyToBake() {
 
   textSize(35);
   textAlign(CENTER);
-  text("Click A or B", 450, 100);
+  text("Press A or B", 450, 100);
   noStroke();
   textSize(25);
   text("A: Flour, eggs, sugar salt, butter", 220, 200);
@@ -193,10 +212,10 @@ function ovenSettings() {
   fill(255, 157, 157);
   textSize(45);
   textAlign(CENTER);
-  text("How long will you preheat your oven for?", 480, 325);
+  text("How long will you preheat your oven for?", 480, 60);
   textSize(35);
   textAlign(CENTER);
-  text("Q= 25 minutes, Z = 35 minutes", 500, 500);
+  text("Q= 25 minutes   Z = 35 minutes", 500, 150);
 
     image(cursorImg, mouseX, mouseY);
 }
@@ -215,8 +234,9 @@ function houseBurned () {
 text("You preheated the oven for too long.", 450, 180);
 text("The house burned down and you died, sucker!", 450, 220);
 
+animation(houseFire, 500, 450);
+
   image(cursorImg, mouseX, mouseY);
-  image(fire, 300, 350);
 textSize(12);
   text("Refresh to play again!", 450, 260);
 
@@ -227,10 +247,10 @@ function giftCake () {
   fill(255, 157, 157);
   textSize(45);
   textAlign(CENTER);
-  text("Cake is ready! Let it cool or give it now?", 480, 325);
+  text("Cake is ready! Let it cool or give it now?", 480, 60);
   textSize(35);
   textAlign(CENTER);
-  text("C= Let it cool! X = Give the cake now!", 500, 500);
+  text("C= Let it cool!            X = Give the cake now!", 500, 150);
 
     image(cursorImg, mouseX, mouseY);
 }
@@ -265,11 +285,11 @@ function poisonedFriend() {
   textAlign(CENTER, TOP);
   text("Your friend is dead, lol.", 450, 100)
   textSize(25);
-text("Your ingredients were poisonous", 450, 180);
-text("Have fun going to trial for murder!", 450, 220)
+text("Your ingredients were poisonous", 450, 200);
+text("Have fun going to trial for murder!", 450, 240)
 
 textSize(12);
-text("Refresh to play again!", 450, 260);
+text("Refresh to play again!", 450, 280);
 
 
 image(celinadead, 500, 300);
@@ -284,12 +304,12 @@ function gameWin () {
   fill(255, 157, 157);
   textSize(80);
   textAlign(CENTER, TOP);
-  text("YOU PASSED", 500, 80);
+  text("YOU PASSED", 500, 40);
   textSize(35);
-text("Don't think you earned a spot in the Great British ", 500, 300);
-text("Baking Show just cause you won the game.", 500, 350);
+text("Don't think you earned a spot in the Great British ", 500, 160);
+text("Baking Show just cause you won the game.", 500, 220);
 textSize(25);
-text("Congrats, I guess", 500, 400);
+text("Congrats, I guess", 500, 280);
 
   image(cursorImg, mouseX, mouseY);
 }
