@@ -1,6 +1,7 @@
 let img;
 var cake;
 var houseFire;
+var lastQuestion;
 
 let gameState = "title";
 let canvas;
@@ -32,12 +33,25 @@ function preload() {
      "Frame5.png",
      "Frame5.png"
    );
+lastQuestion = loadAnimation(
+  "question1.png",
+  "question2.png",
+  "question3.png",
+  "question4.png",
+  "question5.png",
+  "question6.png",
+  "question7.png",
+
+);
+
+
 
   frannyfriend = loadImage ('Images/Franny-Frog-Chef.png');
   celina = loadImage('Images/Celina-.png');
   celinadead = loadImage('Images/CelinaDead.png');
   frannydead = loadImage('Images/FrannyDead.png');
-  ingredients =loadImage('Images/ingredients.png')
+  ingredients =loadImage('Images/ingredients.png');
+  knife = loadImage('Images/Knife.png');
 
   {
     myFont = loadFont('GoogleFont/Poppins-Medium.ttf')
@@ -251,8 +265,8 @@ function giftCake () {
   textSize(35);
   textAlign(CENTER);
   text("C= Let it cool!            X = Give the cake now!", 500, 150);
-
     image(cursorImg, mouseX, mouseY);
+    animation(lastQuestion, 450, 500);
 }
 
 function burntTongue () {
@@ -267,11 +281,13 @@ function burntTongue () {
   text("They're now plotting your murder, cute!", 480, 220);
   textAlign(CENTER);
   textSize(20);
-  text("Refresh to play again!", 450, 270);
+  text("Refresh to play again!", 480, 270);
 
 textAlign(CENTER);
   textSize(15);
   text("#scorpioenergy", 480, 290);
+  image(knife, 300, 300);
+
 
 }
 
